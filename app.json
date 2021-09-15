@@ -1,0 +1,12 @@
+{
+  "name": "example-contextapi",
+  "displayName": "example-contextapi",
+  "expo": {
+    "name": "example-contextapi",
+    "slug": "example-contextapi",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
