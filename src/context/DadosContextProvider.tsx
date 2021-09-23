@@ -18,12 +18,14 @@ export function DadosContextProvider(props: DadosProps) {
     async function limparTudo() {
         try {
            setProdutos([])
-
         } catch (error) {
-         
             Alert.alert('Erro', error)
-           
         }
+    }
+
+    async function removeItemFromProdutos(produto: string){
+        let newArray = produtos.filter(e => e != produto);
+        setProdutos(newArray)
     }
 
 
@@ -32,7 +34,7 @@ export function DadosContextProvider(props: DadosProps) {
     }
 
     return (
-        <DadosContext.Provider value={{ produtos, setProdutos, limparTudo, adicionarProdutos}}>
+        <DadosContext.Provider value={{ produtos, setProdutos, limparTudo, adicionarProdutos, removeItemFromProdutos}}>
             {props.children}
         </DadosContext.Provider>
     )
