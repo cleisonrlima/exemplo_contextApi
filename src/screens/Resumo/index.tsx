@@ -17,8 +17,6 @@ export default function Resumo() {
             <Text style={{padding: 10}}>Remover</Text>
           </TouchableOpacity>
         </View>
-
-
       )}
     </ScrollView>
   )

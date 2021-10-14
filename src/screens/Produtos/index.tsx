@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { TouchableOpacity } from 'react-native'
-import { View, StyleSheet, Text, TextInput } from 'react-native'
+import { View, StyleSheet, Text, TextInput,  KeyboardAvoidingView } from 'react-native'
 import { useDados } from '../../hooks/UseDados'
 import { useNavigation } from "@react-navigation/native";
 
 export default function Produtos() {
   const [produto, setProduto] = useState('')
-  const { produtos, setProdutos, adicionarProdutos } = useDados()
+  const { produtos, adicionarProdutos } = useDados()
   const navigation = useNavigation()
 
   function adicionarProdutoAoContextoDeProdutos(){
@@ -22,7 +22,7 @@ export default function Produtos() {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView  style={styles.container}>
       <View style={styles.title}>
         <Text>Vamos adicionar alguns produtos?</Text>
         <Text>Vode possui {produtos?.length} em seu context</Text>
@@ -38,9 +38,7 @@ export default function Produtos() {
          <Text style={{fontSize: 12}}>Quero ver meus produtos em outra tela</Text>
        </TouchableOpacity>
       </View>
-
-      <TextInput />
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 
